@@ -3,13 +3,12 @@
     <div class="container-fluid">
         <div class="inner-header">
             <div class="logo">
-                <a href="#"> {% comment %} ./index.html {% endcomment %}
+                <a href="{% url 'home' %}"> {% comment %} ./index.html {% endcomment %}
                     <img src="{% static 'img/logo.png' %}" alt="">
                 </a>
             </div>
             <div class="header-right">
                 <img src="{% static 'img/icons/search.png' %}" alt="" class="search-trigger">
-                <img src="{% static 'img/icons/man.png' %}" alt="">
                 <a href="#">
                     <img src="{% static 'img/icons/bag.png' %}" alt="">
                     <span>2</span>
