@@ -20,11 +20,6 @@ class Home(generic.TemplateView):
         )
         return context
 
-# class ProductDetails(generic.TemplateView):
-#     model = Product
-#     template_name = 'product/product-details.html'
-#     slug_url_kwarg = 'slug'
-
 class ProductDetails(generic.DetailView):
     model = Product # html get in lowercare product
     template_name = 'product/product-details.html'
@@ -32,5 +27,15 @@ class ProductDetails(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['related_products'] = self.get_object().related
+        context['related_products'] = self.get_object().related # related func added in models.py
+        return context
+    
+class CategoryDetails(generic.DetailView):
+    model = Category # html get in lowercare 'category'
+    template_name = 'product/category-details.html'
+    slug_url_kwarg = 'slug'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['products'] = self.get_object().products.all() # in models.py, for a specific category related name is 'products'
         return context
