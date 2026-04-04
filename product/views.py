@@ -28,6 +28,9 @@ class Home(generic.TemplateView):
 class ProductDetails(generic.DetailView):
     model = Product # html get in lowercare product
     template_name = 'product/product-details.html'
-    # context_object_name = 'product'
-    # slug_field = 'slug'
     slug_url_kwarg = 'slug'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['related_products'] = self.get_object().related
+        return context
