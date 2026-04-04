@@ -1,0 +1,41 @@
+{% extends "../base.html" %}
+{% load static %}
+{% block title %} {{object_list.title|title}} Product Listing {% endblock title %}
+
+{% block content %}
+<section class="page-add">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="page-breadcrumb">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Page Add Section End -->
+
+    <!-- Categories Page Section Begin -->
+<section class="categories-page spad">
+    <div class="container">
+        <div class="row">
+            {% for product in object_list %}
+            <div class="col-lg-3 col-md-6">
+                <div class="single-product-item">
+                    <figure>
+                        <img src="{{product.thumbnail}}" alt="">
+                    </figure>
+                    <div class="product-text">
+                        <a href="{% url 'product-details' product.slug %}">
+                            <h6>{{product.title|title}}</h6>
+                        </a>
+                        <p>${{product.price}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- Categories Page Section End -->
+{% endblock content %}
