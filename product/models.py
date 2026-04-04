@@ -31,6 +31,10 @@ class Product(models.Model):
     def __str__(self) -> str:
         return self.title
     
+    @property
+    def related(self):
+        return self.category.products.all().exclude(pk=self.pk)
+    
 
 class Slider(models.Model):
     title = models.CharField(max_length=50)
