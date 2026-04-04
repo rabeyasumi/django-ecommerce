@@ -20,5 +20,14 @@ class Home(generic.TemplateView):
         )
         return context
 
-class ProductDetails(generic.TemplateView):
+# class ProductDetails(generic.TemplateView):
+#     model = Product
+#     template_name = 'product/product-details.html'
+#     slug_url_kwarg = 'slug'
+
+class ProductDetails(generic.DetailView):
+    model = Product # html get in lowercare product
     template_name = 'product/product-details.html'
+    # context_object_name = 'product'
+    # slug_field = 'slug'
+    slug_url_kwarg = 'slug'
