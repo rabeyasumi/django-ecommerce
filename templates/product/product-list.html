@@ -24,16 +24,17 @@
     <!-- Categories Page Section Begin -->
 <section class="categories-page spad">
     <div class="container">
-        <div class="row">
+       <div class="row" id="product-list">
             {% for product in object_list %}
             <div class="col-lg-3 col-md-6">
                 <div class="single-product-item">
                     <figure>
-                        <img src="{{product.thumbnail}}" alt="">
+                        <a style="display:block; position:relative; z-index: 2;" href="{% url 'product-details' product.slug %}">
+                            <img src="{{product.thumbnail}}" alt="">
+                        </a>
                     </figure>
                     <div class="product-text">
                         <a href="{% url 'product-details' product.slug %}">
-                            {% comment %} <h6>{{product.title|title}}</h6> {% endcomment %}
                             <h6>{{ view.kwargs.slug|title }} Products</h6>
                         </a>
                         <p>${{product.price}}</p>
@@ -41,7 +42,7 @@
                 </div>
             </div>
             {% endfor %}
-        </div>
+        </div> 
     </div>
 </section>
 <!-- Categories Page Section End -->

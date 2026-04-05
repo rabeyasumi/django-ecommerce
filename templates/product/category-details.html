@@ -27,7 +27,9 @@
             <div class="col-lg-3 col-md-6">
                 <div class="single-product-item">
                     <figure>
-                        <img src="{{product.thumbnail}}" alt="">
+                        <a style="display:block; position:relative; z-index: 2;" href="{% url 'product-details' product.slug %}">
+                            <img src="{{product.thumbnail}}" alt="">
+                        </a>
                     </figure>
                     <div class="product-text">
                         <a href="{% url 'product-details' product.slug %}">

@@ -38,12 +38,10 @@
                         <li><span>Category : </span>{{product.category.title}}</li>
                     </ul>
                     {% if product.in_stock %}
-                    <div class="product-quantity">
-                        <div class="pro-qty">
-                            <input type="text" value="1">
-                        </div>
-                    </div>
-                    <a href="#" class="primary-btn pc-btn">Add to cart</a>
+                        <form action="{% url 'add-to-cart' product.id %}" method="POST">
+                            {% csrf_token %}
+                            <button style="cursor: pointer;" type="submit" class="primary-btn pc-btn">Add to cart</button>
+                        </form>
                     {% endif %}
                 </div>
             </div>
@@ -68,6 +66,7 @@
                 <div class="single-product-item">
                     <figure>
                         <a href="{% url 'product-details' related_product.slug %}"><img src="{{related_product.thumbnail}}" alt=""></a>
+                        <div class="p-status">{{product.category.title|title}}</div>
                     </figure>
                     <div class="product-text">
                         <a href="{% url 'product-details' related_product.slug %}">

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'product',
     'user_account',
+    'cart',
 
 ]
 
@@ -65,6 +66,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'product.context_processors.categories',
+                'cart.context_processors.cart',
             ],
         },
     },
@@ -128,4 +130,7 @@ AUTH_USER_MODEL = 'user_account.User'
 
 # we added to match with youtube project
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SESSION_COOKIE_AGE = 86400
+CART_ID = 'cart'
 
