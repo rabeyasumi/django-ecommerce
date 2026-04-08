@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.shortcuts import get_object_or_404, redirect
 from django.views import generic
 
@@ -24,8 +25,17 @@ class CartItems(generic.TemplateView):
         cart = Cart(request)
 
         if product_id and quantity:
-            cart.update(int(product_id), int(quantity))
-            return redirect('cart')
+            product = get_object_or_404(Product, id=product_id)
+            if int(quantity) > 0:
+                if product.in_stock:
+                    cart.update(int(product_id), int(quantity))
+                    return redirect('cart')
+                else:
+                    messages.warning(request, "The product is not in stock anymore !")
+                    return redirect('cart')
+            else:
+                cart.update(int(product_id), int(quantity))
+                return redirect('cart')
         
         if clear:
             cart.clear()
