@@ -1,7 +1,7 @@
 from .carts import Cart
 
 def cart(request):
-    cart = cart(request)
+    cart = Cart(request)
 
     if len(list(cart.cart.keys())) < 1:
         try:

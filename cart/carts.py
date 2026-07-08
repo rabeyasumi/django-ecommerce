@@ -64,8 +64,13 @@ class Cart(object):
         amount = sum(product['subtotal'] for product in self.cart.values())
         
         if self.coupon:
-            coupon = Coupon.objects.get(id=self.coupon)
-            amount -= amount * (coupon.discont/100)
+            
+            if not str(self.coupon).isdigit():
+                return amount
+
+            coupon = Coupon.objects.get(id=int(self.coupon))
+            print("self.coupon:", self.coupon, type(self.coupon))
+            amount -= amount * (coupon.discount/100)
 
         return amount
 
