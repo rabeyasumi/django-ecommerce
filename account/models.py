@@ -30,4 +30,3 @@ class User(AbstractBaseUser, PermissionsMixin):
         ordering = ['-date_joined']
 
 
-

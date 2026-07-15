@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'product',
-    'user_account',
+    'account',
     'cart',
 
 ]
@@ -126,7 +126,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = 'media/'
 STATICFILES_DIRS = [BASE_DIR / 'static', ]
 MEDIA_ROOT = BASE_DIR / 'media'
-AUTH_USER_MODEL = 'user_account.User'
+AUTH_USER_MODEL = 'account.User'
 
 # we added to match with youtube project
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

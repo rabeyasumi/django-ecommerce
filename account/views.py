@@ -23,6 +23,11 @@ from .mixins import (
 )
 
 
+@method_decorator(never_cache, name='dispatch')
+class Home(LoginRequiredMixin, generic.TemplateView):
+    login_url = 'login'
+    template_name = "account/home.html"
+
 
 @method_decorator(never_cache, name='dispatch')
 class Login(LogoutRequiredMixin, generic.View):
