@@ -28,7 +28,7 @@ class Order(models.Model):
     city = models.CharField(max_length=50)
     zip_code = models.CharField(max_length=10)
     address = models.TextField()
-    total = models.DecimalField(max_length=8, decimal_places=2)
+    total = models.DecimalField(max_digits=8, decimal_places=2)
     paid = models.BooleanField(default=True)
     transaction_id = models.UUIDField()
     status = models.CharField(max_length=15, choices=list(zip(STATUS, STATUS)))
