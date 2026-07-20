@@ -10,6 +10,8 @@ urlpatterns = [
     path('', include('account.urls')),
     path('', include('cart.urls')),
     path('', include('order.urls')),
+    path('payment/', include('payment.urls')),
+    
 ]
 
 if settings.DEBUG:
