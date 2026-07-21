@@ -22,6 +22,7 @@ dacite==1.9.2
 debugpy==1.8.20
 decorator==5.2.1
 defusedxml==0.7.1
+dj-database-url==3.1.2
 Django==6.0.2
 djangorestframework==3.16.1
 et_xmlfile==2.0.0
@@ -32,6 +33,7 @@ filetype==1.2.0
 fonttools==4.61.1
 fqdn==1.5.1
 fsspec==2026.2.0
+gunicorn==26.0.0
 h11==0.16.0
 httpcore==1.0.9
 httpx==0.28.1
@@ -145,5 +147,6 @@ webcolors==25.10.0
 webencodings==0.5.1
 websocket-client==1.9.0
 wheel==0.46.3
+whitenoise==6.12.0
 wordcloud==1.9.6
 ydata-profiling==4.18.1
