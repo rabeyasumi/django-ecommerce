@@ -153,3 +153,19 @@ EMAIL_HOST_USER = "sumii.rab@gmail.com"
 EMAIL_HOST_PASSWORD = "hlquasgkyxyuvuyu"
 EMAIL_PORT = 587
 
+
+SSLCOMMERZ_STORE_ID = "fruit6a5dccfe52f13"
+SSLCOMMERZ_STORE_PASSWORD = "fruit6a5dccfe52f13@ssl"
+SSLCOMMERZ_SANDBOX = True
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://sandbox.sslcommerz.com",
+]
+
+
+SESSION_COOKIE_SAMESITE = "Lax"
+CSRF_COOKIE_SAMESITE = "Lax"
+
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False

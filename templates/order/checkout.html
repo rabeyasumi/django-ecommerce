@@ -87,13 +87,14 @@
         })
         .then(data => {
             if(data.success) {
-                formValid = true;
+
                 new FormData(form).forEach((value, key) =>{
                     if(key != 'csrfmiddlewaretoken'){
                         document.getElementById(`error_${key}`).innerText = "";
                     }
                 });
-                console.log('valid');
+
+                window.location.href = data.redirect_url;
             }
             else {
                 let errors = data.errors;
