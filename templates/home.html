@@ -17,7 +17,7 @@
                     <ul class="product-controls">
                         <li data-filter="*">All</li>
                         {% for category in featured_categories %}
-                        <li data-filter=".{{featured_categories.slug}}">{{category.title|title}}</li>
+                        <li data-filter=".{{category.slug}}">{{category.title|title}}</li>
                         {% endfor %}
                     </ul>
                 </div>
