@@ -157,14 +157,11 @@ AUTHENTICATION_BACKENDS = (
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
 EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "sumii.rab@gmail.com"
-EMAIL_HOST_PASSWORD = "hlquasgkyxyuvuyu"
+EMAIL_HOST_USER = 
+EMAIL_HOST_PASSWORD = 
 EMAIL_PORT = 587
 
 
-SSLCOMMERZ_STORE_ID = "fruit6a5dccfe52f13"
-SSLCOMMERZ_STORE_PASSWORD = "fruit6a5dccfe52f13@ssl"
-SSLCOMMERZ_SANDBOX = True
 
 
 CSRF_TRUSTED_ORIGINS = [
