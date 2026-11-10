@@ -22,10 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get(
-    "SECRET_KEY",
-    "django-insecure-ok61-*o_3sx(#@%jb_$uo+jt4rd^by%0x*m9=x2%-=@3ym@dz%"
-)
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
@@ -96,19 +93,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "ecommerce_db",
-        "USER": "neondb_owner",
-        "PASSWORD": "npg_xJrRtHqi92cX",
-        "HOST": "ep-square-morning-avm1urb6.c-11.us-east-1.aws.neon.tech",
-        "PORT": "5432",
-        "OPTIONS": {
-            "sslmode": "require",
-        },
-    }
-}
+
 
 
 # Password validation
